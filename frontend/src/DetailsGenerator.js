@@ -3,16 +3,16 @@ import React, {useState} from "react";
 export default function DetailsGenerator(){
 
     const [id,setId] = useState(0);
-    const [year,setYear] = useState(0);
+    const [year,setYear] = useState();
     const [month,setMonth] = useState("");
-    const [day,setDay] = useState(0);
+    const [day,setDay] = useState();
     const [gender,setGender] = useState("");
     
 
     
     const generator = () => {
         let number = Number(id.slice(0, -5));
-        let year = (number > 100) ? number/1000 : 1900+(number/1000);
+        let year = ((number/1000) > 100) ? Math.floor(number/1000) : Math.floor(1900+(number/1000));
         setYear(year);
         let number1 = number % 1000;
         if ((number1 > 0) && (number1 < 367)){
@@ -128,7 +128,7 @@ export default function DetailsGenerator(){
         <div>
             <h1>Enter your NIC number here</h1>
             <label>NIC:</label>
-            <input type="text" onChange={(e)=>{
+            <input type="text" minLength="10" onChange={(e)=>{
                     setId(e.target.value);
                 }}></input>
             <button onClick={generator}>Sumbit</button>
