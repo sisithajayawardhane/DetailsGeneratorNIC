@@ -1,16 +1,36 @@
-import React from "react";
+import React,{useState} from "react";
 import './App.css';
+import Axios from 'axios';
 
 export default function Login(){
+
+    const [usernameLog,setUsernameLog] = useState("");
+    const [passwordLog,setPasswordLog] = useState("");
+
+    const login = (e) => {
+        e.preventDefault();
+        Axios.post("http://localhost:8070/user/login",
+        {   username:usernameLog,
+            password:passwordLog
+        }).then(()=>{
+            alert("Login Succes!"); 
+        }).catch((err)=>{
+            alert(err);
+        })
+    };
     return(
         <div>
             <form >
                 <h1>Login</h1>
                 <label>Username:</label>
-                <input type="text" placeholder="Username"></input><br/>
+                <input type="text" placeholder="Username" onChange={(e)=>{
+                    setUsernameLog(e.target.value);
+                }}></input><br/>
                 <label>Password:</label>
-                <input type="text" placeholder="Password"></input><br/>
-                <button>Login</button>
+                <input type="password" placeholder="Password" onChange={(e)=>{
+                    setPasswordLog(e.target.value);
+                }}></input><br/>
+                <button onClick={login}>Login</button>
                 
             </form>
             
