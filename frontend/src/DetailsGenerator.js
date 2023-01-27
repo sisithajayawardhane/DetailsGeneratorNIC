@@ -9,17 +9,15 @@ export default function DetailsGenerator(){
 
     
     const generator = () => {
-        let number = id.replace("v", "") && id.replace("x", "");
-        let num = Number(number);
-        if (num < 100000){
-            let year = 1900+(num/1000);
-            setYear(year);
-            let a = num % 1000;
-            if (a < 500){
-                setGender("male");
-            }else {
-                setGender("female");
-            }
+        let number = Number(id.slice(0, -5));
+        let year = (number > 100) ? number/1000 : 1900+(number/1000);
+        setYear(year);
+        let number1 = number % 1000;
+        if ((number1 > 0) && (number1 < 367)){
+            setGender("Male");
+        }
+        else if ((number1 > 500) && (number1 < 867)){
+            setGender("Female");
         }
     }
 
