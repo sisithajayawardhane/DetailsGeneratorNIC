@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+label,input,button{
+  padding:0.3em;
+  margin:1em;
+}
