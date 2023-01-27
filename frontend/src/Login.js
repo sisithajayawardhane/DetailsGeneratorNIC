@@ -1,9 +1,11 @@
 import React,{useState} from "react";
+import { useNavigate } from "react-router-dom";
 import './App.css';
 import Axios from 'axios';
 
 export default function Login(){
 
+    const navigate = useNavigate();
     const [usernameLog,setUsernameLog] = useState("");
     const [passwordLog,setPasswordLog] = useState("");
 
@@ -14,6 +16,8 @@ export default function Login(){
             password:passwordLog
         }).then(()=>{
             alert("Login Succes!"); 
+            navigate("/details");
+
         }).catch((err)=>{
             alert(err);
         })
