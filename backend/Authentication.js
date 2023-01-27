@@ -1,9 +1,9 @@
 const router = require("express").Router();
-let User = require("../User.js");
+let User = require("./User.js");
 
 //Register user route
 
-router.route("/add").post((req,res)=>{
+router.route("/register").post((req,res)=>{
     const username = req.body.username;
     const password = req.body.password;
     
