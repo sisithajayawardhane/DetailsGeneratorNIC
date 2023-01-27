@@ -1,4 +1,5 @@
 import React, {useState} from "react"; 
+import {Link} from "react-router-dom";
 import './App.css';
 import Axios from 'axios';
 
@@ -7,13 +8,16 @@ export default function Register(){
     const [usernameReg,setUsernameReg] = useState("");
     const [passwordReg,setPasswordReg] = useState("");
 
-    const register = () => {
-        Axios.post("http//localhost:3001/register",
+    const register = (e) => {
+        e.preventDefault();
+        Axios.post("http://localhost:8070/user/register",
         {   username:usernameReg,
             password:passwordReg
-        }).then((response)=>{
-            console.log(response);
-        });
+        }).then(()=>{
+            alert("User registered!"); 
+        }).catch((err)=>{
+            alert(err);
+        })
     };
     return(
         <div>
@@ -28,6 +32,8 @@ export default function Register(){
                     setPasswordReg(e.target.value);
                 }}></input><br/>
                 <button onClick={register}>Register</button>
+                <button><Link to="/login">Go to Login page</Link></button>
+
                 
             </form>
             
