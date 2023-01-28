@@ -24,7 +24,7 @@ export default function Login(){
     };
     return(
         <div>
-            <form >
+            <form className="second">
                 <h1>Login</h1>
                 <label>Username:</label>
                 <input type="text" placeholder="Username" onChange={(e)=>{

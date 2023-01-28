@@ -37,6 +37,24 @@
   }
 }
 label,input,button{
-  padding:0.3em;
-  margin:1em;
+  margin:5px;
+  
+}
+h1{
+  text-align: center;
+}
+button{
+  text-decoration: none;
+}
+.first{
+  display:grid;
+  align-items: center;
+  justify-content: center;
+  
+}
+.second{
+  position:absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

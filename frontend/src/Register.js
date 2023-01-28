@@ -21,7 +21,7 @@ export default function Register(){
     };
     return(
         <div>
-            <form >
+            <form className="first" >
                 <h1>Registration</h1>
                 <label>Username:</label>
                 <input type="text" placeholder="Username" onChange={(e)=>{

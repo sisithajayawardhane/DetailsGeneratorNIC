@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './App.css';
 
 export default function DetailsGenerator(){
 
@@ -125,7 +126,7 @@ export default function DetailsGenerator(){
     }
 
     return(
-        <div>
+        <div className="second">
             <h1>Enter your NIC number here</h1>
             <label>NIC:</label>
             <input type="text" minLength="10" onChange={(e)=>{

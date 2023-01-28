@@ -9,14 +9,11 @@ function App() {
   return (
     <Router>
       <div> 
-        <Routes>
-          
+        <Routes> 
           <Route path="/register" element = {<Register/>}/>
           <Route path="/details" element = {<DetailsGenerator/>}/>
           <Route path="/login" element = {<Login/>}/>
           <Route path="/" element = {<First/>}/>
-
-  
         </Routes>
         
       </div>
