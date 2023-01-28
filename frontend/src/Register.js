@@ -10,7 +10,7 @@ export default function Register(){
 
     const register = (e) => {
         e.preventDefault();
-        Axios.post("http://localhost:8070/user/register",
+        Axios.post("https://backend-bf0c.onrender.com/user/register",
         {   username:usernameReg,
             password:passwordReg
         }).then(()=>{
